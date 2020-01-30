@@ -1,31 +1,42 @@
-
-
 class Player
-    attr_accessor :name, :symbol
+    attr_accessor :name, :symbol, :number
   
-    def initialize(name) #initialisation des attributs de la classe 
+    def initialize(name,symbol,number) #initialisation des attributs de la classe 
       @name = name
-      @symbol = "x"
+      @symbol = symbol
+      @number = number
     end
-=begin
-  def player_names
-   
-       
-    puts "Nom du joueur 1 :"
-    print ">"
-    entry_name = gets_chomp 
-    player1 = Player.new(entry_name)
+
+    def show_player
+      puts "Le joueur #{@number} s'appelle #{@name} et joue avec le symbol #{symbol}"
+      puts 
+    end
+
+
+    def create_players
       
-    puts "Nom du joueur 2 :"
-    entry_name = gets_chomp
-    player1 = Player.new(entry_name)
+      puts "Player : quel est ton nom ?"
+      print ">"
 
-    puts "Il y a 2 joueurs : #{player1.name} contre #{player2.name}"
-    puts "COMMENCONS LA PARTIE"
-  
-  end
+      name_player1 = gets.chomp
 
-=end
+      player1 = Player.new("#{name_player1}","x")
+
+      puts "Player 2 : quel est ton nom ?"
+      print ">"
+
+      name_player2 = gets.chomp
+      player2 = Player.new("#{name_player2}","o")
+
+      puts = player2.symbol
+
+    end
+
+    def show_state
+
+      puts "#{@name} a comme symbole #{@symbol}"
+    end
+
 end
 
 

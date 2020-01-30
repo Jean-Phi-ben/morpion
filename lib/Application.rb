@@ -2,30 +2,32 @@ require 'pry'
 require 'bundler'
 Bundler.require
 
+$:.unshift File.expand_path("./..", __FILE__)
+require 'BoardCase'
+require 'Application'
+require 'Game'
+require 'Player'
+require 'Board'
+require 'Show'
+
 
 class Application
   
   def perform
-    #on va créer les 9 boardcases et initialiser case_id
-    boardcase1 = BoardCase.new("A1")
-    boardcase2 = BoardCase.new("A2")
-    boardcase3 = BoardCase.new("A3")
-    boardcase4 = BoardCase.new("B1")
-    boardcase5 = BoardCase.new("B2")
-    boardcase6 = BoardCase.new("B3")
-    boardcase7 = BoardCase.new("C1")
-    boardcase8 = BoardCase.new("C2")
-    boardcase9 = BoardCase.new("C3")
+    #on va créer les 9 instances de BoardCase et initialiser case_id 
+    
   
+    game1 = Game.new
+    show = Show.new.show_board(@board)
+    game1.turn
+    
 
-puts "l'id de #{boardcase1.value} est #{boardcase1.case_id}"
-    board = Board.new
 
-    binding.pry
-
+    
   end
-
-
 
 end
 
+Application.new.perform
+
+binding.pry

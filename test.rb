@@ -5,13 +5,16 @@ Bundler.require
 
 $:.unshift File.expand_path("./../lib", __FILE__)
 require 'BoardCase'
-require 'Application'
-require 'Game'
-require 'Player'
-require 'Board'
-require 'Show'
-require 'test'
 
-Test.new.perform
+class Test
+
+    do perform
+
+        boardcase1 = BoardCase.new("A1")
+
+        boardcase1.show_case
+    end
+end
+
 
 binding.pry
